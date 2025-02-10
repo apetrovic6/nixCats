@@ -40,14 +40,18 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
       auto_install = require('nixCatsUtils').lazyAdd(true, false),
     },
   },
-  { 'folke/lazydev.nvim', ft = "lua",
+  {
+    'folke/lazydev.nvim',
+    ft = 'lua',
     opts = {
       library = {
         -- adds type hints for nixCats global, but LazyDev is just nice in general
-        { path = (nixCats.nixCatsPath or "") .. '/lua', words = { "nixCats" } },
+        { path = (nixCats.nixCatsPath or '') .. '/lua', words = { 'nixCats' } },
       },
-    }
+    },
   },
   -- import/override with your plugins
+
   { import = 'plugins' },
+  { import = 'config.lsp' },
 }, lazyOptions)
