@@ -8,4 +8,10 @@ return {
     },
     config = true,
   },
+
+  require('flutter-tools').setup {
+    debugger = {
+      enabled = true,
+    },
+  },
 }
